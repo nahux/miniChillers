@@ -1,0 +1,11 @@
+.card:hover {
+	opacity: 0.6
+}
+
+.item a { color: inherit; }
+
+.precio {
+	color: #ffab40;
+	font-size: large;
+	font-weight: bold;
+}
