@@ -1,16 +1,96 @@
 <link rel="stylesheet" type="text/css" href="../css/item.css">
 <div class="section">
 	<div class="container">
-		<img class="responsive-img" src="../images/mc1.jpg">
-		<p>Mini Chiller 1 es un mini chiller para refrigerar lo que desee.</p>
-		<h4>Especificaciones:</h4>
+		<img class="responsive-img" src="{{chiller.img}}">
+		<h4>{{chiller.name}}</h4>
+		<p>{{chiller.desc}}</p>
+		<br>
+		<!--Especificaciones -->
 		<div class="especificaciones">
-			<ul>
-				<li>Mega propulsor bovinado</li>
-				<li>Lector de huella dactilar</li>
-				<li>1024 caballos de fuerza</li>
-			</ul>
+			<table>
+				<thead>
+					<tr>
+						<th>ESPECIFICACIONES</th>
+						<th>UNIDAD</th>
+						<th>CCCH024</th>
+						<th>CCCH030</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>CAPACIDAD DE ENFRIAMIENTO</td>
+						<td>{{chiller.specs.cap_enfri1[0]}}</td>
+						<td>{{chiller.specs.cap_enfri1[1]}}</td>
+						<td>{{chiller.specs.cap_enfri1[2]}}</td>
+					</tr>
+					<tr>
+						<td>CAPACIDAD DE ENFRIAMIENTO</td>
+						<td>{{chiller.specs.cap_enfri2[0]}}</td>
+						<td>{{chiller.specs.cap_enfri2[1]}}</td>
+						<td>{{chiller.specs.cap_enfri2[2]}}</td>
+					</tr>
+					<tr>
+						<td>MOTOR DEL COMPRESOR</td>
+						<td>{{chiller.specs.motor_comp[0]}}</td>
+						<td>{{chiller.specs.motor_comp[1]}}</td>
+						<td>{{chiller.specs.motor_comp[2]}}</td>
+					</tr>
+					<tr>
+						<td>MOTOR DE LA BOMBA</td>
+						<td>{{chiller.specs.motor_bomb[0]}}</td>
+						<td>{{chiller.specs.motor_bomb[1]}}</td>
+						<td>{{chiller.specs.motor_bomb[2]}}</td>	
+					</tr>
+					<tr>
+						<td>TIPO DE REFRIGERANTE</td>
+						<td>{{chiller.specs.tipo_refri[0]}}</td>
+						<td>{{chiller.specs.tipo_refri[1]}}</td>
+						<td>{{chiller.specs.tipo_refri[2]}}</td>
+					</tr>
+					<tr>
+						<td>MÁXIMO FLUIDO DE REFRIGERANTE</td>
+						<td>{{chiller.specs.max_flu_re[0]}}</td>
+						<td>{{chiller.specs.max_flu_re[1]}}</td>
+						<td>{{chiller.specs.max_flu_re[2]}}</td>
+					</tr>
+					<tr>
+						<td>DIÁMETRO TUBERIA IN-OUT</td>
+						<td>{{chiller.specs.diam_tub[0]}}</td>
+						<td>{{chiller.specs.diam_tub[1]}}</td>
+						<td>{{chiller.specs.diam_tub[2]}}</td>
+					</tr>
+					<tr>
+						<td>MOTOR DEL VENTILADOR</td>
+						<td>{{chiller.specs.motor_vent[0]}}</td>
+						<td>{{chiller.specs.motor_vent[1]}}</td>
+						<td>{{chiller.specs.motor_vent[2]}}</td>
+					</tr>
+					<tr>
+						<td>CAPACIDAD DEL TANQUE </td>
+						<td>{{chiller.specs.cap_tanque[0]}}</td>
+						<td>{{chiller.specs.cap_tanque[1]}}</td>
+						<td>{{chiller.specs.cap_tanque[2]}}</td>
+					</tr>
+					<tr>
+						<td>DIMENSIONES(largoXanchoXalto)</td>
+						<td>{{chiller.specs.dimension[0]}}</td>
+						<td>{{chiller.specs.dimension[1]}}</td>
+						<td>{{chiller.specs.dimension[2]}}</td>
+					</tr>
+					<tr>
+						<td>VOLTAJE</td>
+						<td>{{chiller.specs.voltaje[0]}}</td>
+						<td>{{chiller.specs.voltaje[1]}}</td>
+						<td>{{chiller.specs.voltaje[2]}}</td>
+					</tr>
+					<tr>
+						<td>PESO</td>
+						<td>{{chiller.specs.peso[0]}}</td>
+						<td>{{chiller.specs.peso[1]}}</td>
+						<td>{{chiller.specs.peso[2]}}</td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
 	</div>
 </div>
-<a href="#!/">volver<a>

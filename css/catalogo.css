@@ -1,3 +1,8 @@
+.catalogo_content {
+	width: 950px;
+	margin: 0 auto;	
+}
+
 .card:hover {
 	opacity: 0.6
 }
