@@ -1,0 +1,13 @@
+nav {
+	background-color: #fafafb;
+	display: inline-table;
+}
+
+.nav_content {
+	width: 950px;
+	margin: 0 auto;
+}
+
+nav a {
+	color: #4e6491 !important;
+}
