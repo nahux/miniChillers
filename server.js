@@ -1,14 +1,20 @@
 var express = require('express');
 var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
+var Chiller = require('./chiller');
 //Datos mock
-var mock = require('./mock');
+//var mock = require('./mock');
 
 var app = express();
 
-//var mongoose = require('mongoose');
-
 //Conexión base de datos
-//mongoose.connect('mongodb://localhost:4444/mini_chillers');
+mongoose.connect('mongodb+srv://nahuel94:wJ2sV_cENfBbGP4@cluster0-8jyou.mongodb.net/mini_chillers?retryWrites=true', 
+{ useNewUrlParser: true }, 
+function (err) {
+	if (err) throw err;
+	console.log('Successfully connected');
+ 
+});
 
 
 //Config
@@ -22,7 +28,13 @@ app.listen(9229, function(){
 })
 
 app.get('/api/chillers', function(req,res){
-	res.json(mock.chillers);
+	Chiller.find(function(err,chillers) {
+		if(err){
+			console.log(err);
+			res.send(err);
+		}
+		res.json(chillers);
+	});
 });
 
 app.get('/api/chillers/:chiller', function(req,res){
