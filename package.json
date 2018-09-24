@@ -3,6 +3,10 @@
 	"version": "0.0.1",
 	"description": "Simple Angular app for mini chillers",
 	"main": "server.js",
+	"scripts": {
+    	"start": "node server.js",
+    	"debug": "node --inspect server.js"
+  	},
 	"dependencies": {
 		"express": "latest",
 		"mongoose": "latest"
