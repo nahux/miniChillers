@@ -23,8 +23,9 @@ app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.listen(9229, function(){
-	console.log('Escuchando en 9229');
+const PORT = process.env.PORT || 9229;
+app.listen(PORT, function(){
+	console.log(`Escuchando en ${PORT}`);
 })
 
 app.get('/api/chillers', function(req,res){
