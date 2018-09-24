@@ -38,7 +38,12 @@ app.get('/api/chillers', function(req,res){
 });
 
 app.get('/api/chillers/:chiller', function(req,res){
-	res.json(mock.chillers.find(x => x.id == req.params.chiller))
+	Chiller.findById(req.params.chiller,function(err,chiller){
+		if(err){
+			console.log(err);
+		}
+		res.json(chiller);
+	})
 })
 
 app.get('*', function(req,res){
