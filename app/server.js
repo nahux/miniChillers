@@ -1,19 +1,18 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-var Chiller = require('./chiller');
+var path = require('path');
+var Chiller = require('./chiller_model');
 //Datos mock
 //var mock = require('./mock');
 
 var app = express();
 
 //Conexión base de datos
-mongoose.connect('mongodb+srv://nahuel94:wJ2sV_cENfBbGP4@cluster0-8jyou.mongodb.net/mini_chillers?retryWrites=true', 
-{ useNewUrlParser: true }, 
-function (err) {
+const db_url = 'mongodb+srv://nahuel94:wJ2sV_cENfBbGP4@cluster0-8jyou.mongodb.net/mini_chillers?retryWrites=true';
+mongoose.connect(db_url, { useNewUrlParser: true }, function (err) {
 	if (err) throw err;
 	console.log('Successfully connected');
- 
 });
 
 
@@ -28,6 +27,8 @@ app.listen(PORT, function(){
 	console.log(`Escuchando en ${PORT}`);
 })
 
+
+//REST 
 app.get('/api/chillers', function(req,res){
 	Chiller.find(function(err,chillers) {
 		if(err){
@@ -47,6 +48,5 @@ app.get('/api/chillers/:chiller', function(req,res){
 	})
 })
 
-app.get('*', function(req,res){
-	res.sendfile('./public/index.html');
-});
+//Llamado a angular
+app.use(express.static('../public'));
